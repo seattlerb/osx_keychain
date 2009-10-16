@@ -1,0 +1,8 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/osx_keychain
+lib/osx_keychain.rb
+test/test_osx_keychain.rb

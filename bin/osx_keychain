@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'osx_keychain'
+
+keychain = OSXKeychain.new
+
+action = ARGV.shift
+
+abort "usage: #{File.basename $0} (get|set) service [user] [pass]" unless action
+
+case action
+when "get" then
+  p keychain[ARGV.shift, ARGV.shift]
+when "set" then
+  keychain[ARGV.shift, ARGV.shift] = ARGV.shift
+else
+  warn "unknown command: #{action}"
+end
