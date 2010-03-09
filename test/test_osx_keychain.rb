@@ -1,6 +1,8 @@
 require "minitest/autorun"
 require "osx_keychain"
 
+CAN_TEST = ENV['SECURITYSESSIONID']
+
 class TestOsxKeychain < MiniTest::Unit::TestCase
   def test_sanity
     keychain = OSXKeychain.new
@@ -11,5 +13,5 @@ class TestOsxKeychain < MiniTest::Unit::TestCase
 
     assert_equal pass, keychain[serv, user]
     assert_equal pass, keychain[serv]
-  end
+  end if CAN_TEST
 end
