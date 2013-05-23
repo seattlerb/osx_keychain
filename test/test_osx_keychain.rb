@@ -3,7 +3,7 @@ require "osx_keychain"
 
 CAN_TEST = ENV['SECURITYSESSIONID']
 
-class TestOsxKeychain < MiniTest::Unit::TestCase
+class TestOsxKeychain < Minitest::Test
   def test_sanity
     keychain = OSXKeychain.new
 
