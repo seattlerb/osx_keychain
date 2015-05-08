@@ -1,3 +1,10 @@
+=== 1.0.1 / 2015-05-07
+
+* 2 bug fixes:
+
+  * Fixed tests to not bother if we're not logged into OSX
+  * Removed dead rubyforge setting in Rakefile
+
 === 1.0.0 / 2009-10-16
 
 * 1 major enhancement
