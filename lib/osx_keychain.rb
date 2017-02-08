@@ -39,15 +39,15 @@ class OSXKeychain
                    "can't access keychains, Authorization failed: %d", status);
 
         status = SecKeychainFindGenericPassword(keychains,
-                   strlen(service), service,
-                   username ? strlen(username) : 0, username,
+                   (UInt32)strlen(service), service,
+                   username ? (UInt32)strlen(username) : 0, username,
                    &length, &data, NULL);
 
         if (status == errSecItemNotFound)
           status = SecKeychainFindInternetPassword(keychains,
-                     strlen(service), service,
+                     (UInt32)strlen(service), service,
                      0, NULL,
-                     username ? strlen(username) : 0, username,
+                     username ? (UInt32)strlen(username) : 0, username,
                      0, NULL, 0, kSecProtocolTypeAny, kSecAuthenticationTypeAny,
                      &length, &data, NULL);
 
@@ -83,21 +83,21 @@ class OSXKeychain
                    "can't access keychains, Authorization failed: %d", status);
 
         status = SecKeychainFindGenericPassword(keychain,
-                   strlen(service), service,
-                   username == NULL ? 0 : strlen(username), username,
+                   (UInt32)strlen(service), service,
+                   username == NULL ? 0 : (UInt32)strlen(username), username,
                    0, NULL, &item);
 
         switch (status) {
           case 0:
             status = SecKeychainItemModifyAttributesAndData(item, NULL,
-                       strlen(password), password);
+                       (UInt32)strlen(password), password);
             CFRelease(item);
             break;
           case errSecItemNotFound:
             status = SecKeychainAddGenericPassword(keychain,
-                       strlen(service), service,
-                       username == NULL ? 0 : strlen(username), username,
-                       strlen(password), password,
+                       (UInt32)strlen(service), service,
+                       username == NULL ? 0 : (UInt32)strlen(username), username,
+                       (UInt32)strlen(password), password,
                        NULL);
             break;
           default:
