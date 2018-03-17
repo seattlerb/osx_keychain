@@ -4,7 +4,7 @@ require 'rubygems'
 require 'inline'
 
 class OSXKeychain
-  VERSION = '1.0.1'
+  VERSION = '1.0.2'
 
   def []= service, username, password
     set(service, username, password)
