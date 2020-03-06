@@ -1,6 +1,6 @@
 = osx_keychain
 
-* http://rubyforge.org/projects/seattlerb
+* https://github.com/seattlerb/osx_keychain
 
 == DESCRIPTION:
 
