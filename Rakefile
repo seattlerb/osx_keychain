@@ -1,17 +1,18 @@
 # -*- ruby -*-
 
-require 'rubygems'
-require 'hoe'
+require "hoe"
 
 Hoe.add_include_dirs("../../RubyInline/dev/lib",
                      "../../ZenTest/dev/lib")
 
 Hoe.plugin :seattlerb
 
-Hoe.spec 'osx_keychain' do
-  developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
+Hoe.spec "osx_keychain" do
+  developer "Ryan Davis", "ryand-ruby@zenspider.com"
 
-  extra_deps << ['RubyInline', '~> 3']
+  dependency "RubyInline", "~> 3"
+
+  license "MIT"
 end
 
 # vim: syntax=ruby

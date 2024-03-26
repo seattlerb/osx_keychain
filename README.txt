@@ -1,6 +1,6 @@
 = osx_keychain
 
-* https://github.com/seattlerb/osx_keychain
+home :: https://github.com/seattlerb/osx_keychain
 
 == DESCRIPTION:
 
